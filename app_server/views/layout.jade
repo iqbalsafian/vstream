@@ -5,4 +5,21 @@ html
 		title= title
 		link(rel='stylesheet', href='/stylesheets/bulma.css')
 	body
-		block content
+		section(class="hero is-info is-large")
+			.hero-head
+				header.nav
+					.container
+						.nav-left
+							a.nav-item
+								img
+							pageHeader.title
+						span.nav-toggle
+							span
+							span
+							span
+						.nav-right.nav-menu
+						a(class='nav-item' href='/') Home
+						a(class='nav-item' href='/location') Location
+						a(class='nav-item' href='/location/review/new') Documentation
+			.container.hero-body
+				block content

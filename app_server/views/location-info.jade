@@ -1,0 +1,37 @@
+extends layout
+
+block content
+	.columns
+		.column.is-4
+			p.is-notification
+				= '******'
+				br
+				article.message
+					.message-header
+						p= 'Opening Hours'
+					.message-body
+						='Monday - Friday: 7.00am - 7.00pm'
+						br
+						='Saturday: 8.00am - 5.00pm'
+						br
+						='Sunday: Closed'
+
+				article.message
+					.message-header
+						p= 'Facilities'				
+					.message-body
+						span.tag.is-danger= 'Hot Drinks'
+						span.tag.is-danger= 'Food'
+						span.tag.is-danger= 'Premium WiFi'
+
+		.column.is-4
+			article.message
+				.message-header
+					p= 'Location Maps'				
+				.message-body
+					figure.image.is-480x480
+						img(src='http://maps.googleapis.com/maps/api/staticmap?center=1.5834081,103.4966789&zoom=17&size=400x350&sensor=false&markers=1.5834081,103.4966789&scale=2')
+		.column.is-4
+			p
+				h1= 'Kak Minah cafe is closed already'
+				
