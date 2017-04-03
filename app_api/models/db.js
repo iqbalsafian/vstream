@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-
+mongoose.Promise = global.Promise;
 var dbURI = 'mongodb://localhost/Loc8r';
 mongoose.connect(dbURI);
 

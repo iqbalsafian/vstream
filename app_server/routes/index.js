@@ -13,6 +13,10 @@ router.get('/about', ctrlOthers.about);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+
+  if (req.session.state) {
+	res.json({state: req.session.state});
+  }
 });
 
 module.exports = router;

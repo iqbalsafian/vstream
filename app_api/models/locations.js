@@ -27,11 +27,11 @@ var locationSchema = new mongoose.Schema({
 mongoose.model('Location', locationSchema);
 
 // db.locations.save({
-// 	name: "Warung Wak Moh & Miah",
-// 	address: "No 5, Rizab 1, Kg Melayu Raya, 81500 Pekan Nenas, Johor, Malaysia.",
+// 	name: "Warung Kak Minah",
+// 	address: "Depan Kubur, Kg Melayu Raya, 81500 Pekan Nenas, Johor, Malaysia.",
 // 	rating: 3,
 // 	facilities: ['Hot Drinks', 'Food'],
-// 	coords: [103.4951937, 1.5840187],
+// 	coords: [103.4966791, 1.5833885],
 // 	openingTimes: [
 // 		{
 // 			days: 'Saturday - Thursday',
@@ -50,12 +50,11 @@ mongoose.model('Location', locationSchema);
 
 //db.locations.update({"_id": ObjectId(58e0c01ffa6d80b112a90eb8)}, {$set:{"coords": [103.496320, 1.583458]}})
 // db.locations.update(
-// 	{"_id": ObjectId("58e0c01ffa6d80b112a90eb8")},
+// 	{"_id": ObjectId("58e1eb42b191c56a3433c532")},
 // 	{
 // 		$push: {
 // 			reviews: {
 // 				author: 'Wak Tojet',
-// 				id: ObjectId(),
 // 				rating: 4,
 // 				timestamp: new Date("July 16, 2013"),
 // 				reviewText: 'The place looks stunning with big-screen and have cable TV too!'
