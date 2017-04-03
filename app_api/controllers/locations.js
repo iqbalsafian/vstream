@@ -1,3 +1,29 @@
+var request = require("request");
+var apiOptions = {
+	server: "http://localhost:3000"
+};
+if (process.env.NODE_ENV === 'production') {
+	//apiOptions.server = domain.com
+}
+
+var requestOptions = {
+	url: 'http://yourdomain.com',
+	method: "GET",
+	json: {},
+	qs: {
+		offset: 20
+	}
+};
+request(requestOptions, function(err, response, body) {
+	if (err) {
+		console.log(err);
+	} else if (response.statusCode === 200) {
+		console.log(body);
+	} else {
+		console.log(response.statusCode);
+	}
+});
+
 var mongoose = require('mongoose');
 var Loc = mongoose.model('Location');
 
@@ -40,7 +66,7 @@ module.exports.locationsCreate = function (req, res, callback) {
 				closing: req.body.closing2,
 				closed: req.body.closed2,
 			}]
-		}, 
+		},
 		function(err, location) {
 			if (err) {
 				sendJSONResponse(res, 400, err);
@@ -86,7 +112,7 @@ module.exports.locationsListByDistance = function (req, res) {
 
 		if (err){
 
-		} else {	
+		} else {
 			results.forEach(function(doc) {
 				locations.push({
 					distance: theEarth.getDistanceFromRads(doc.dis),
@@ -129,7 +155,7 @@ module.exports.locationsUpdateOne = function (req, res) {
 	if (!req.params.locationid) {
 		sendJSONResponse(res, 404, {
 			"message" : "Not found, location is required"
-		});		
+		});
 		return;
 	}
 	Loc
@@ -141,7 +167,7 @@ module.exports.locationsUpdateOne = function (req, res) {
 					sendJSONResponse(res, 404, {
 						"message" : "location not found"
 					});
-					return;	
+					return;
 				} else if (err) {
 					sendJSONResponse(res, 400, err);
 					return;
